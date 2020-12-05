@@ -16,4 +16,10 @@ const app = new Vue({
 import httpInterceptor from '@/common/http.interceptor';
 Vue.use(httpInterceptor, app);
 
+declare module 'vue/types/vue' {
+  interface Vue {
+    $u: any;
+  }
+}
+
 app.$mount();

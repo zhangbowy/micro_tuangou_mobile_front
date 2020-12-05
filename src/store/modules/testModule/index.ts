@@ -1,8 +1,8 @@
 import {Commit} from 'vuex';
 import {State, Shape} from './interface';
 const initState: State = {
-  name: '',
-  list: [],
+  name: '2',
+  list: [{id: 5, quantity: 3}],
 };
 // actions
 const actions = {

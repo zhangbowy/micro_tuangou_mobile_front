@@ -6,9 +6,15 @@
       </text>
       <view
         v-for="item in list"
-        :key="item.a"
+        :key="item.id"
+        :key="item.id+'1'"
+        :key="item.id+'1'"
+        :key="item.id+'1'"
+        :key="item.id+'1'"
+        :key="item.id+'1'"
       >
-        {{ item.a }}
+        {{this.v}}
+        {{ item.id }}
       </view>
     </view>
   </view>
@@ -23,21 +29,22 @@
   export default class Index extends Vue {
     private title: String = 'myTitle'; //响应式属性
     private num: Number = 123; //对标之前的data函数返回的对象
-    get age(): Number {
+    get age(): String {
       //计算属性
-      return this.num;
+      return `${this.num}${this.name}`;
     }
 
     mounted() {
-      console.log('mounted', (this as any).$u.config);
+      console.log('mounted', this.$u.config);
     }
 
-    @TestModule.Action('checkout') actionCheckout!: any;
-    @TestModule.Getter('name') name!: string;
-    @TestModule.Getter('list') list!: any;
+    @TestModule.Action('checkout') actionCheckout!: Function;
+    // name类型 为如下之一
+    @TestModule.Getter('name') name!: string[] | string | number;
+    @TestModule.Getter('list') list!: [];
 
-    checkout() {
-      this.actionCheckout([{a: 1, b: 2}]);
+    checkout(): void {
+      this.actionCheckout([{id: 53, quantity: 33}]);
     }
     onLoad() {
       this.checkout();
