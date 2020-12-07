@@ -5,15 +5,11 @@
         {{ name }}
       </text>
       <view
+
         v-for="item in list"
         :key="item.id"
-        :key="item.id+'1'"
-        :key="item.id+'1'"
-        :key="item.id+'1'"
-        :key="item.id+'1'"
-        :key="item.id+'1'"
       >
-        {{this.v}}
+        {{ this.v }}
         {{ item.id }}
       </view>
     </view>
