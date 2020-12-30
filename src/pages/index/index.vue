@@ -42,8 +42,6 @@
     checkout(): void {
       this.actionCheckout([{id: 53, quantity: 33}]);
     }
-
-    
     onLoad() {
       this.checkout();
       console.log('onload');
